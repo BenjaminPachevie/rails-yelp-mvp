@@ -1,0 +1,13 @@
+ <%= render @restaurant %>
+ <br>
+ <ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <%= "#{review.rating} - #{review.content}" %>
+    </li>
+  <% end %>
+  </ul>
+ <%= render "reviews/form", status: :unprocessable_entity %>
+ <br>
+ <br>
+ <%= link_to "Back to the list", restaurants_path %>
